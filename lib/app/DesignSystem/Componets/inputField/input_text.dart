@@ -22,7 +22,7 @@ class StyledInputFieldState extends State<StyledInputField> {
   @override
   void initState() {
     super.initState();
-    obscureText = widget.viewModel.password;
+    obscureText = widget.viewModel.isEnabled;
     widget.viewModel.controller.addListener(validateInput);
   }
 
@@ -51,7 +51,7 @@ class StyledInputFieldState extends State<StyledInputField> {
     InputDecoration decoration = InputDecoration(
       contentPadding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
       filled: true,
-      suffixIcon: widget.viewModel.password
+      suffixIcon: widget.viewModel.isEnabled
           ? IconButton(
               icon: Icon(obscureText ? Icons.visibility : Icons.visibility_off),
               onPressed: togglePasswordVisibility,
